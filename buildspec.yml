@@ -24,8 +24,8 @@ phases:
       - docker push $REPOSITORY_URI:$IMAGE_TAG
       - printf '{"ImageURI":"%s"}' $REPOSITORY_URI:$IMAGE_TAG > imageDetail.json
 artifacts:
-  discard-paths: yes
   files: 
+    - 'appsec/scan-results.json'
     - 'image*.json'
     - 'appspec.yaml'
     - 'taskdef.json'
